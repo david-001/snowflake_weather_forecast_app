@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 from temp_map import load_temp_map
+from rain_map import load_rain_map
 from get_weather import get_weather
 from get_cities import get_cities
 from get_dates import get_dates
@@ -25,6 +26,9 @@ def main():
                                           selected_date=selected_date)
     with temp_map_tab:
         load_temp_map(specific_date_df=specific_date_df)
+
+    with rain_map_tab:
+        load_rain_map(specific_date_df=specific_date_df)
 
 
 if __name__ == "__main__":
