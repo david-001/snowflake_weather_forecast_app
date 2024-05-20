@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def specific_date_data(selected_city, selected_date):
-    config = toml.load("secrets.toml")
+    config = toml.load(".streamlit/config.toml")
     # Connect to database
     conn = create_connection(config["geo_weather_data"])
 

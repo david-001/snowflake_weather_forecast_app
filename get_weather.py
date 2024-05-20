@@ -5,7 +5,7 @@ from run_query import run_query
 
 
 def get_weather():
-    config = toml.load("secrets.toml")
+    config = toml.load(".streamlit/config.toml")
     # Connect to database
     conn = create_connection(config["geo_weather_data"])
 
