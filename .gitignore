@@ -10,3 +10,4 @@ venv.bak/
 # Streamlit Secrets
 .streamlit/secrets.toml
 secrets.toml
+config.toml

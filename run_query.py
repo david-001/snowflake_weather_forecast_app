@@ -1,6 +1,5 @@
 import streamlit as st
 import snowflake.connector
-import toml
 
 # Function to query the database
 
