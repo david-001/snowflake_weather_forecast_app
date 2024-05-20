@@ -1,12 +1,8 @@
 import streamlit as st
-from create_connection import create_connection
 from run_query import run_query
 
 
-def get_weather():
-    # Connect to database
-    conn = create_connection()
-
+def get_weather(conn):
     # Perform get weather data query
     get_weather_db_query = """
       CREATE OR REPLACE TABLE GEO_WEATHER_DATA.GEO_WEATHER.FORECAST_DAY AS

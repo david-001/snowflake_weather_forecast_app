@@ -1,12 +1,8 @@
 import streamlit as st
-from create_connection import create_connection
 from run_query import run_query
 
 
-def get_dates():
-    # Connect to database
-    conn = create_connection()
-
+def get_dates(conn):
     get_dates_str = """
       SELECT DISTINCT date_valid_std
       FROM forecast_day

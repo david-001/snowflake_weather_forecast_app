@@ -1,12 +1,8 @@
-import streamlit as st
-from create_connection import create_connection
 from run_query import run_query
 import pandas as pd
 
 
-def specific_date_data(selected_city, selected_date):
-    # Connect to database
-    conn = create_connection()
+def specific_date_data(conn, selected_city, selected_date):
 
     # Join weather data and geo data
     combine_weather_geo_str = f"""

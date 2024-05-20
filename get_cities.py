@@ -1,12 +1,8 @@
 import streamlit as st
-from create_connection import create_connection
 from run_query import run_query
 
 
-def get_cities():
-    # Connect to database
-    conn = create_connection()
-
+def get_cities(conn):
     get_cities_str = """
       SELECT DISTINCT forecast_day.city_name
       FROM forecast_day
