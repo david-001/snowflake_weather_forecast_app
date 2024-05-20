@@ -1,13 +1,11 @@
 import streamlit as st
-import toml
 from create_connection import create_connection
 from run_query import run_query
 
 
 def get_weather():
-    config = toml.load(".streamlit/config.toml")
     # Connect to database
-    conn = create_connection(config["geo_weather_data"])
+    conn = create_connection()
 
     # Perform get weather data query
     get_weather_db_query = """

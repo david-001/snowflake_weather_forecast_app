@@ -1,13 +1,11 @@
 import streamlit as st
-import toml
 from create_connection import create_connection
 from run_query import run_query
 
 
 def get_cities():
-    config = toml.load(".streamlit/config.toml")
     # Connect to database
-    conn = create_connection(config["geo_weather_data"])
+    conn = create_connection()
 
     get_cities_str = """
       SELECT DISTINCT forecast_day.city_name
