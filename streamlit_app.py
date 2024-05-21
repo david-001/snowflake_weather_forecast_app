@@ -23,6 +23,9 @@ specific_date_df = specific_date_data(
 forecast_df = forecast_data(
     conn, selected_city=selected_city, selected_postal_code=selected_postal_code)
 
+if 'active_tab' not in st.session_state:
+    st.session_state.active_tab = 'Forecast'
+
 forecast_tab, temp_map_tab, rain_map_tab = st.tabs(
     ["Forecast", "Temperature Map", "Precipitation Map"])
 
