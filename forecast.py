@@ -4,19 +4,21 @@ from plotly.subplots import make_subplots
 
 
 def load_forecast(forecast_df):
+    st.dataframe(forecast_df)
+
     # Create figure with secondary y-axis
     forecast_fig = make_subplots(specs=[[{"secondary_y": True}]])
 
     # Add traces
     forecast_fig.add_trace(
         go.Scatter(x=forecast_df["Date"],
-                   y=forecast_df["Temperature (F)"]),
+                   y=forecast_df["Temperature (F)"], name="Temperature (F)"),
         secondary_y=False,
     )
 
     forecast_fig.add_trace(
         go.Scatter(x=forecast_df["Date"],
-                   y=forecast_df["Precipitation (inch)"]),
+                   y=forecast_df["Precipitation (Inches)"], name="Precipitation (Inches)"),
         secondary_y=True,
     )
 
@@ -33,4 +35,3 @@ def load_forecast(forecast_df):
     forecast_fig.update_yaxes(
         title_text="Precipation (Inches)", secondary_y=True)
     st.plotly_chart(forecast_fig, theme="streamlit", use_container_width=True)
-    st.dataframe(forecast_df)

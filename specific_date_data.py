@@ -16,6 +16,6 @@ def specific_date_data(conn, selected_city, selected_date):
 
     specific_date_data = run_query(conn, combine_weather_geo_str)
     specific_date_df = pd.DataFrame(specific_date_data, columns=[
-        'Date', 'Postcode', 'Temperature (F)', 'Precipitation (inch)', 'Latitude', 'Longitude', 'City', 'Country'])
+        'Date', 'Postcode', 'Temperature (F)', 'Precipitation (Inches)', 'Latitude', 'Longitude', 'City', 'Country'])
 
     return specific_date_df
